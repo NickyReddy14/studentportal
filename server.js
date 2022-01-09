@@ -9,7 +9,7 @@ const appliedcomps = require('./appliedcomps');
 
 
 const app = express();
-mongoose.connect('mongodb+srv://tharunkarnekota:tharunkarnekota@cluster0.dws2t.mongodb.net/myFirstDatabase?retryWrites=true&w=majority').then(
+mongoose.connect('mongodb+srv://Nikhil:pwd123456@cluster0.bqph8.mongodb.net/plctrk1?retryWrites=true&w=majority').then(
     ()=> console.log('Db connected..')
 )
 

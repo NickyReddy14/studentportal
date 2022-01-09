@@ -24,25 +24,25 @@ app.post('/register',async (req,res) =>{
         const { fullname,collegeId,branch,email,mobile,github,linkedin,password,confirmpassword } = req.body;
         const exist = await users.findOne({email});
         if(exist){
-            return res.status(200).send('user already registered')
+            return res.status(200).send('This ID has already been Registered')
         }
         const existId = await users.findOne({collegeId});
         if(existId){
-            return res.status(200).send('this collegeID already registered')
+            return res.status(200).send('This ID has already been Registered')
         }
         if(password !== confirmpassword){
-            return res.status(400).send('password invalid')
+            return res.status(400).send('Invalid Password')
         }
 
         let newUser = new users({
             fullname,collegeId,branch,email,mobile,github,linkedin,password,confirmpassword
         })
         newUser.save();
-        return res.status(200).send('User Registered Successfully')
+        return res.status(200).send('User has been Registered Successfully')
     }
     catch(err){
         console.log(err)
-        return res.status(500).send('register Server Error')
+        return res.status(500).send('Register Server Error')
     }
 })
 
@@ -55,10 +55,10 @@ app.post('/login',async (req,res)=>{
         const {email,password} = req.body;
         const exist = await users.findOne({email})
         if(!exist){
-            return res.status(200).send('User not Exist plz register')
+            return res.status(200).send('User does not exist please register')
         }
         if(exist.password !== password){
-            return res.status(200).send('password invalid')
+            return res.status(200).send('Invalid Password')
         }
         let payload = {
             user : {
@@ -73,7 +73,7 @@ app.post('/login',async (req,res)=>{
     }
     catch(err){
         console.log(err);
-        return res.status(500).send('login Server Error')
+        return res.status(500).send('Login Server Error')
     }
 })
 
@@ -103,11 +103,11 @@ app.post('/registercomp',async (req,res)=>{
             salary:salary
         })
         await newRegisteration.save();
-        return res.status(200).send('Registered company added successfully')
+        return res.status(200).send('Registered Company Added Successfully')
     }
     catch(err){
         console.log(err);
-        return res.status(500).send('login Server Error')
+        return res.status(500).send('Login Server Error')
     }
 })
 
@@ -169,7 +169,7 @@ app.put('/updatewrittentest/:id',async(req,res) =>{
             writtentest : "1",
             
         })
-        return res.status(200).json("successfully updated ");
+        return res.status(200).json("Successfully Updated");
     }
     catch(err){
         console.log(err);
@@ -184,7 +184,7 @@ app.put('/updatetechnicalround/:id',async(req,res) =>{
             technicalround : "1",
             
         })
-        return res.status(200).json("successfully updated ");
+        return res.status(200).json("Successfully Updated");
     }
     catch(err){
         console.log(err);
@@ -199,7 +199,7 @@ app.put('/updatehrround/:id',async(req,res) =>{
             hrround : "1",
             
         })
-        return res.status(200).json("successfully updated ");
+        return res.status(200).json("Successfully Updated");
     }
     catch(err){
         console.log(err);

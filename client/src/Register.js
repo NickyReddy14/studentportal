@@ -264,17 +264,17 @@ const Register = () => {
                                             })
                             }
                             else{
-                                alert("please choose correct branch respective to your ID")
+                                alert("Please choose correct branch respective to your ID")
                             }
 
                     }
                     else{
-                        alert("Please give valid inputs to branch and collegeId")
+                        alert("Please give Valid inputs to branch and College Id")
                     }
 
                 }
                 else{
-                    alert("password and confirm password doesnt match")
+                    alert("Passwords do not match")
                 }
             }
             else{
@@ -282,30 +282,24 @@ const Register = () => {
             }
         }
         else{
-            alert("please use min 6 characters for password and 10 digits for mobile")
+            alert("Please use min 6 characters for password and 10 digits for mobile")
         }
     }
 
     return (
         <div>
             <nav className="navbar bg-dark justify-content-left">
-                <h1 style={{"marginLeft":"5px"}}>
-                    <Link to='/'>VJIT'ians Hub</Link>
-                </h1>
-                <div className="justify-content-left" >
-                    <h5 >
-                        <Link to="/register" className="btn btn-secondary" style={{margin:"12px"}}>Register</Link>
-                        <Link to="/login" className="btn btn-secondary" >Login</Link>&nbsp;&nbsp;
-                    </h5>
-                </div>
+            <h1 id="header">
+                <h1>VJITian's Hub</h1>
+            </h1>
             </nav>
-
+            <center>
             <section className="container">
                 <h1 className="large " style={{"color":"orange","marginTop":"50px"}}>Sign Up</h1>
-                <p className="lead"><b> Create your Account</b></p>
+                <p className="lead"><b> Create your Account</b></p><br></br>
                 <form onSubmit={submitHandler}>
                     <input style={{width:"41%"}} type="text"             placeholder="Name*"            onChange={changeHandler} value={fullname} name="fullname" /><br /><br />
-                    <input style={{width:"41%"}} type="text"             placeholder="collegeId*"       onChange={changeHandler2} value={collegeId} name="collegeId" /><br /><br />
+                    <input style={{width:"41%"}} type="text"             placeholder="College Id*"       onChange={changeHandler2} value={collegeId} name="collegeId" /><br /><br />
                     <div style={{"textAlign":"left","border": "1px solid black","padding":"1px",width:"41%"}}>
                         <div className="card">
                             <div className="card-body">
@@ -316,7 +310,7 @@ const Register = () => {
                                     <input type="radio" value="AIE" name="branch" /> <span>AIE</span> &nbsp;&nbsp;
                                     <input type="radio" value="IT" name="branch" /> <span>IT</span> &nbsp;&nbsp;
                                     <input type="radio" value="CSE" name="branch" /> <span>CSE</span> &nbsp;&nbsp;
-                                    <input type="radio" value="CSEDS" name="branch" /> <span>CSEDS</span> &nbsp;&nbsp;
+                                    <input type="radio" value="CSEDS" name="branch" /> <span>CSE-DS</span> &nbsp;&nbsp;
                                     <input type="radio" value="ECE" name="branch" /> <span>ECE</span> &nbsp;&nbsp;
                                     <input type="radio" value="EEE" name="branch" /> <span>EEE</span> &nbsp;&nbsp;
                                     <input type="radio" value="CIVIL" name="branch" /> <span>CIVIL</span> &nbsp;
@@ -325,21 +319,22 @@ const Register = () => {
                             </div>
                         </div>
                     </div><br />
-                    <input style={{width:"41%"}} type="email"            placeholder="Email Address*"   onChange={changeHandler} value={email} name="email" /><br /><br />
-                    <input style={{width:"41%"}} type="text"             placeholder="mobile*"          onChange={changeHandler} value={mobile} name="mobile" /><br /><br />
-                    <input style={{width:"41%"}} type="text"             placeholder="(optional) github profile link"          onChange={changeHandler} value={github} name="github" /><br /><br />
-                    <input style={{width:"41%"}} type="text"             placeholder="(optional) linkedin profile link"        onChange={changeHandler} value={linkedin} name="linkedin" /><br /><br />
+                    <input style={{width:"41%"}} type="email"            placeholder="E-Mail Address*"   onChange={changeHandler} value={email} name="email" /><br /><br />
+                    <input style={{width:"41%"}} type="text"             placeholder="Mobile Number*"          onChange={changeHandler} value={mobile} name="mobile" /><br /><br />
+                    <input style={{width:"41%"}} type="text"             placeholder="Github Profile Link (Optional)"          onChange={changeHandler} value={github} name="github" /><br /><br />
+                    <input style={{width:"41%"}} type="text"             placeholder="Linkedin Profile Link (Optional)"        onChange={changeHandler} value={linkedin} name="linkedin" /><br /><br />
                     
-                    <input style={{width:"41%"}} type="password"         placeholder="password*"         onChange={changeHandler} value={password} name="password" /><br /><br />
-                    <input style={{width:"41%"}} type="confirmpassword"  placeholder="confirm password*" onChange={changeHandler} value={confirmpassword} name="confirmpassword" /><br /><br />
+                    <input style={{width:"41%"}} type="password"         placeholder="Password*"         onChange={changeHandler} value={password} name="password" /><br /><br />
+                    <input style={{width:"41%"}} type="confirmpassword"  placeholder="Confirm Password*" onChange={changeHandler} value={confirmpassword} name="confirmpassword" /><br /><br />
 
-                    <input type="submit" className="btn btn-primary" value="Register" />
+                    <br></br><input type="submit" className="btn btn-primary" value="Register" />
                 </form>
                 <p>
                     Already have an Account? <Link to="/login">Sign in</Link>
                 </p>
+            
             </section><br /><br />
-
+            </center>
             {x===1 ? <Navigate to="/login" /> : null}
         </div>
     )

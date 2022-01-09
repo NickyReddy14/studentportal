@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import { Link,Navigate } from 'react-router-dom'
 import axios from 'axios'
-
+import './Login.css'
 const Login = () => {
     const [auth,setAuth] = useState(false)
     const [data,seData] = useState({
@@ -32,31 +32,34 @@ const Login = () => {
         <div>
             
         <nav className="navbar bg-dark justify-content-left">
-            <h1 style={{"marginLeft":"5px"}}>
-                <Link to='/'>Placement Portal</Link>
+            
+            <h1 id="header">
+            <h1>Placement Portal Login</h1>
             </h1>
-            <div className="justify-content-left" >
+
+            {/* <div className="justify-content-left" >
                 <h5 >
                     <Link to="/register" className="btn btn-secondary" style={{margin:"12px"}}>Register</Link>
                     <Link to="/login" className="btn btn-secondary" >Login</Link>&nbsp;&nbsp;
                 </h5>
-            </div>
+            </div> */}
             
         </nav>
-            
+            <center>
             <section className="container">
                 <h1 className="large " style={{"color":"orange","marginTop":"100px"}} >Sign In</h1>
-                <p className="lead"><b>Sign into Your Account</b></p>
+                <p className="lead"><b>Enter your details below to Sign In</b></p><br></br>
                 <form onSubmit={submitHandler}>
-                    <input className="form-control-lg m-1 border" style={{width:"40%"}} type="email"    placeholder="Enter email"    name="email" value={email}   onChange={changeHandler} /><br /><br />
-                    <input className="form-control-lg m-1 border" style={{width:"40%"}} type="password" placeholder="Enter password" name="password" value={password} onChange={changeHandler} /><br /><br />
-                    <input type="submit" className="btn btn-primary" value="login" />
+                    <input className="form-control-lg m-1 border" style={{width:"40%"}} type="email"    placeholder="Please enter your e-mail ID"    name="email" value={email}   onChange={changeHandler} /><br /><br />
+                    <input className="form-control-lg m-1 border" style={{width:"40%"}} type="password" placeholder="Please enter your password" name="password" value={password} onChange={changeHandler} /><br /><br />
+                    <input type="submit" className="btn btn-primary" value="Login" />
                 </form>
                 
-                <p>
-                    Don't have any account? <Link to="/register">Sign Up</Link>
+                <p><br></br>
+                    Don't have an account? <Link to="/register">Sign Up</Link>
                 </p>
             </section>
+            </center>
         </div>
     )
 }

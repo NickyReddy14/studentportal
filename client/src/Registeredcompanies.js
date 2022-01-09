@@ -42,11 +42,11 @@ const Registeredcompanies = () => {
 
             <nav className="navbar navbar-light">
                 <div className="container-fluid">
-                    <h3 className="navbar-brand">Registered Companies data <span style={{color:"blue"}}> 🤝 </span></h3>
+                    <h3 className="navbar-brand">Registered Companies Data <span style={{color:"blue"}}> 🤝 </span></h3>
 
                     <form className="d-flex" onSubmit={searchHandler} >
-                        <input className="form-control me-2" type="text" onChange={(e) => setSearch(e.target.value)} placeholder="clgId /email /skill /branch" aria-label="Search" />
-                        <input className="btn btn-outline-success" type="submit" value="search" />
+                        <input className="form-control me-2" type="text" onChange={(e) => setSearch(e.target.value)} placeholder="Enter to Search" aria-label="Search" />
+                        <input className="btn btn-outline-success" type="submit" value="Search" />
                     </form>
                     
                 </div>
@@ -62,14 +62,14 @@ const Registeredcompanies = () => {
                         <center>
                             <img 
                                 className="round-img"
-                                src="https://cdn.pixabay.com/photo/2016/03/23/22/26/user-1275780_960_720.png"
+                                src="https://assets-global.website-files.com/5d9bc5d562ffc22c37470958/5fce6ee18b204291c8598510_React%20Native%20Developer%20Hiring%20Guide.svg"
                                 height="200" width="300"
                                 alt="user photo"
                             />
                             <div>
                                 <h2 style={{"color":"green"}}>{profile.compname}</h2>
                                 <h3>{profile.studentname}</h3>
-                                <h3>{profile.clgId}</h3>
+                                <h5>{profile.clgId}</h5>
                                 <h5>Number of rounds finished:{profile.writtentest ? (profile.technicalround ? (profile.hrround ? "3" : "2") : "1") : "0"}</h5>
                                 <Link to={`/indregcompprofile/${profile._id}`} className="btn btn-primary">Update Rounds</Link><br /><br />
                             </div>

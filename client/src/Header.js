@@ -9,17 +9,17 @@ const Header = () => {
             
             <li className="nav-link ">
                 <NavLink to="/dashboard" className="nav-link" style={({ isActive }) => ({ color: isActive ? 'orange' : 'white' })}>
-                    All company
+                    Companies Hub
                 </NavLink>
             </li>
             <li className="nav-link ">
                 <NavLink to="/registeredcompanies" className="nav-link" style={({ isActive }) => ({ color: isActive ? 'orange' : 'white' })}>
-                    Registered Company
+                    Registered Companies
                 </NavLink>
             </li>
             <li className="nav-link ">
                 <NavLink to="/selectedcompanies" className="nav-link" style={({ isActive }) => ({ color: isActive ? 'orange' : 'white' })}>
-                    Selected Company
+                    Qualified Company
                 </NavLink>
             </li>
             <li className="nav-link">

@@ -24,7 +24,7 @@ const appliedS = new mongoose.Schema({
     hrround:String
 })
 
-module.exports = mongoose.model('Registered Company data',appliedS)
+module.exports = mongoose.model('Registered Company Data',appliedS)
 
 
 

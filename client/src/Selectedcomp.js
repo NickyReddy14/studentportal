@@ -89,7 +89,7 @@ const Selectedcompanies = () => {
                         )}
                         </div>
                     : 
-                    <h2>YET No Company has been selected</h2>
+                    <h2>You haven't been qualified in any company yet.</h2>
                     }
                 </div>
                 </div>

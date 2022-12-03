@@ -18,9 +18,17 @@ const users = new mongoose.Schema({
         type : String,
         required : true
     },
+    cgpa:{
+        type: String,
+        required: true
+    },
     mobile :{
         type : String,
-        required : true,
+        required : true
+    },
+    resume: {
+        type: String,
+        required: true
     },
     github :String,
     linkedin :String,

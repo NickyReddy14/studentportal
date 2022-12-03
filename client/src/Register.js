@@ -8,15 +8,17 @@ const Register = () => {
         fullname : '',
         collegeId : '',
         branch : '',
+        cgpa:'',
         email : '',
         mobile : '',
         github : '',
-        linkedin : '', 
+        linkedin : '',
+        resume: '',
         password : '',
         confirmpassword : ''
     })
     const [x,setX] = useState(0);
-    const {fullname,collegeId,branch,email,mobile,github,linkedin,password,confirmpassword} = data
+    const {fullname,collegeId,branch,cgpa,email,mobile,github,linkedin,resume,password,confirmpassword} = data
     const changeHandler = e =>{
         seData({...data,[e.target.name]:e.target.value})
     }
@@ -237,13 +239,17 @@ const Register = () => {
         console.log(branch);
         
         if(password.length>5 && mobile.length===10){
-            if(fullname && email ){
+            if(fullname && email && resume){
                 if(password===confirmpassword){
-                    if(collegeId && branch && collegeId.length===10){
+                    if(collegeId && branch && collegeId.length===10 && cgpa){
                         
                             if(check_roll(collegeId,branch)){
 
-                                
+                        
+
+                                if(!resume){
+                                    data.resume = "-";
+                                }
 
                                 if(!github){
                                     data.github = "-";
@@ -269,7 +275,7 @@ const Register = () => {
 
                     }
                     else{
-                        alert("Please give Valid inputs to branch and College Id")
+                        alert("Please check CGPA, ID and Branch")
                     }
 
                 }
@@ -319,11 +325,12 @@ const Register = () => {
                             </div>
                         </div>
                     </div><br />
+                    <input style={{width:"41%"}} type="text"             placeholder="CGPA*"       onChange={changeHandler2} value={cgpa} name="cgpa" /><br /><br />
                     <input style={{width:"41%"}} type="email"            placeholder="E-Mail Address*"   onChange={changeHandler} value={email} name="email" /><br /><br />
                     <input style={{width:"41%"}} type="text"             placeholder="Mobile Number*"          onChange={changeHandler} value={mobile} name="mobile" /><br /><br />
+                    <input style={{width:"41%"}} type="link"             placeholder="Resume Drive Link*"          onChange={changeHandler} value={resume} name="resume" /><br /><br />
                     <input style={{width:"41%"}} type="text"             placeholder="Github Profile Link (Optional)"          onChange={changeHandler} value={github} name="github" /><br /><br />
                     <input style={{width:"41%"}} type="text"             placeholder="Linkedin Profile Link (Optional)"        onChange={changeHandler} value={linkedin} name="linkedin" /><br /><br />
-                    
                     <input style={{width:"41%"}} type="password"         placeholder="Password*"         onChange={changeHandler} value={password} name="password" /><br /><br />
                     <input style={{width:"41%"}} type="confirmpassword"  placeholder="Confirm Password*" onChange={changeHandler} value={confirmpassword} name="confirmpassword" /><br /><br />
 

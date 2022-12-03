@@ -21,7 +21,7 @@ app.use(cors({origin:"*"}));
 
 app.post('/register',async (req,res) =>{
     try{
-        const { fullname,collegeId,branch,email,mobile,github,linkedin,password,confirmpassword } = req.body;
+        const { fullname,collegeId,branch,cgpa,email,mobile,resume,github,linkedin,password,confirmpassword } = req.body;
         const exist = await users.findOne({email});
         if(exist){
             return res.status(200).send('This ID has already been Registered')
@@ -35,7 +35,7 @@ app.post('/register',async (req,res) =>{
         }
 
         let newUser = new users({
-            fullname,collegeId,branch,email,mobile,github,linkedin,password,confirmpassword
+            fullname,collegeId,branch,cgpa,email,mobile,resume,github,linkedin,password,confirmpassword
         })
         newUser.save();
         return res.status(200).send('User has been Registered Successfully')
